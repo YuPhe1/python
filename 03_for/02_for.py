@@ -14,8 +14,12 @@ print()
 for i, j in zip(list1, list2):
     print(i, j)
 
-print()
-
 list3 = ["python", "java", "c", ["javascript", "typescript"]]
 for i in list3:
     print(i, end=" ")
+
+print()
+
+list4 = [[1, "a"],[2, "b"],[3, "c"]]
+for i, j in list4:
+    print(i, j)
