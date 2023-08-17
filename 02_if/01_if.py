@@ -7,4 +7,4 @@ elif (num < 0):
 elif num == 0:
     print("0")
 else:
-    print("숫자가 아닙니다.")
+    print("숫자가 아닙니다.") 
