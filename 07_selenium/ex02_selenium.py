@@ -8,6 +8,8 @@ driver = webdriver.Chrome()
 driver.get("https://www.example.com")
 
 # p 태그 요소만 접근하기
+driver.find_elements(By.TAG_NAME, 'p')
+
 
 # 10초 동안 현재 상태에서 대기
 time.sleep(10)
