@@ -19,3 +19,13 @@ print(arr3)
 # 배열 연산
 arr11 = arr1 + 10
 print("arr11",arr11)
+arr12 = arr1 - arr2
+print("arr12", arr12)
+
+# 배열 슬라이싱(특정 인덱스 범위 접근하기)
+arr4 = np.array([1,2,3,4,5,6,7,8,9,10])
+print(arr4[:2]) # 0~1번 인덱스
+print(arr4[1:2]) # 1~1번 인덱스
+print(arr4[3:8]) # 3~7번 인덱스
+print(arr4[6:]) # 6~9번 인덱스
+print(arr[0:8:2]) # 0부터 2씩 더하면서 8미만까지의 인덱스
