@@ -10,10 +10,11 @@ driver.get("https://comic.naver.com/webtoon")
 
 # 특정 조건을 만족할 때 까지 대기
 wait = WebDriverWait(driver, 10)
-element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[class="ContentTitle__title--e3qXt"]')))
+element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[class="text"]')))
 
 # time.sleep(5)
-titles = driver.find_elements(By.CSS_SELECTOR, '[class="ContentTitle__title--e3qXt"]')
+titles = driver.find_elements(By.CSS_SELECTOR, '[class="text"]')
 
 for title in titles:
     print(title.text)
+print(len(titles))
