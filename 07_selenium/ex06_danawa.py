@@ -8,9 +8,9 @@ driver = webdriver.Chrome()
 driver.get("https://prod.danawa.com/list/?cate=112758&shortcutKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81")
 
 # 노트북 상품명 접근
-product_names = driver.find_elements(By.NAME, 'productName')
+notebook_names = driver.find_elements(By.CSS_SELECTOR, '[name="productName"]')
 
-for name in product_names:
+for name in notebook_names:
     print(name.text)
 
 time.sleep(10)
