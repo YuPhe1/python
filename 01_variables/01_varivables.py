@@ -7,4 +7,4 @@ print(number)
 print(type(number))
 number = True
 print(number)
-print(type(number))
+print(type(number)) 
