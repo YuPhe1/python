@@ -9,7 +9,7 @@ driver = webdriver.Chrome()
 driver.get("https://comic.naver.com/webtoon")
 
 # 특정 조건을 만족할 때 까지 대기
-wait = WebDriverWait(driver, 100)
+wait = WebDriverWait(driver, 10)
 element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[class="ContentTitle__title--e3qXt"]')))
 
 # time.sleep(5)
