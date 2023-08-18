@@ -31,10 +31,11 @@ def scroll_fun():
             print(h1, h2, "종료")
             break
 
-# 무한 스크롤 함수 호출
+
+    # 무한 스크롤 함수 호출
 scroll_fun()
 
-# 제목 가져오기
+    # 제목 가져오기
 titles = driver.find_elements(By.XPATH, '//*[@id="video-title"]')
 for title in titles:
     print(title.text)
