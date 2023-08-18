@@ -18,10 +18,14 @@ driver.maximize_window()    # 창 크기 최대로
 # 3. 높이값 확인
 # 4. 높이가 같나면 break로 while문 중단
 while True:
+    # 스크롤 하기 전 높이
     h1 = driver.execute_script("return document.documentElement.scrollHeight")
+    # 스크롤
     driver.execute_script("window.scrollTo(0, document.documentElement.scrollHeight)")
-    time.sleep(2)
+    time.sleep(3)
+    # 스크롤 한 후 높이
     h2 = driver.execute_script("return document.documentElement.scrollHeight")
+    #  두 스크롤 값이 같은지 확인
     if h1 == h2:
         print(h1, h2, "종료")
         break
