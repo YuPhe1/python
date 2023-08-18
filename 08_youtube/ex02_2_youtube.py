@@ -2,8 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
+# 콘솔에서 입력받아 검색
 query = input("검색> ")
+query.replace(" ", "+")
 url = "https://www.youtube.com/results?search_query=" + query
 
 driver = webdriver.Chrome()
