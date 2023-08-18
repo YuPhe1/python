@@ -52,6 +52,7 @@ co.click()
 # 무한 스크롤 함수를 호출하여 제목만 출력
 scroll_fun()
 
+time.sleep(2)
 # 제목 가져오기
 titles = driver.find_elements(By.XPATH, '//*[@id="video-title"]')
 for title in titles:
