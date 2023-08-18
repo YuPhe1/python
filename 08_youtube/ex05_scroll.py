@@ -11,12 +11,9 @@ driver.get("https://www.youtube.com/")
 
 driver.maximize_window()    # 창 크기 최대로
 
-# while문을 적용하여 무한스크롤 구현하기
-# while문 내부동작
-# 1. 처음 높이값 확인.
-# 2. 높이 만큼 스크롤 내리기
-# 3. 높이값 확인
-# 4. 높이가 같나면 break로 while문 중단
+
+
+# 스크롤 후 제목데이터를 리턴하는 함수
 def scroll_fun():
     while True:
         # 스크롤 하기 전 높이
@@ -30,12 +27,13 @@ def scroll_fun():
         if h1 == h2:
             print(h1, h2, "종료")
             break
-
+    # 제목 가져오기
+    titles = driver.find_elements(By.XPATH, '//*[@id="video-title"]')
+    return titles        
 # 무한 스크롤 함수 호출
-scroll_fun()
+titles = scroll_fun()
 
-# 제목 가져오기
-titles = driver.find_elements(By.XPATH, '//*[@id="video-title"]')
+
 for title in titles:
     print(title.text)
 print("영상 갯수:", len(titles))
