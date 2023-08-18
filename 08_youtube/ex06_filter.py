@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
-from ex04_scroll import scroll_fun
 
 # 1. 유튜브 홈페이지 접속
 # 2. 검색어 입력
