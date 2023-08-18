@@ -29,3 +29,9 @@ while True:
     if h1 == h2:
         print(h1, h2, "종료")
         break
+
+# 제목 가져오기
+titles = driver.find_elements(By.XPATH, '//*[@id="video-title"]')
+for title in titles:
+    print(title.text)
+print("영상 갯수:", len(titles))
