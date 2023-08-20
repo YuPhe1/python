@@ -28,10 +28,11 @@ for title in titles:
         aria_label = title.get_attribute("aria-label")
         start_index = aria_label.rfind("조회수")+4
         end_index = aria_label.rfind("회")
-        hits = aria_label[start_index:end_index]
-        hits = int(hits.replace(",",""))
-        print("제목:",title.get_attribute("title"))
-        print("조회수:",hits)
+        if(start_index > 3): # 유튜브 음악 추천 거르기
+            hits = aria_label[start_index:end_index]
+            hits = int(hits.replace(",",""))
+            print("제목:",title.get_attribute("title"))
+            print("조회수:",hits)
 
 
 time.sleep(10)
