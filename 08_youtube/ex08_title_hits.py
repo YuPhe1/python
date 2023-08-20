@@ -34,4 +34,4 @@ for title in titles:
         print("조회수:",hits)
 
 
-time.sleep(1000)
+time.sleep(10)
