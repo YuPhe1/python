@@ -35,4 +35,7 @@ crawling_result = {
 }
 
 result = pd.DataFrame(crawling_result)
-result.to_csv("./result.csv", encoding="utf-8-sig")
+# dataframe을 csv로 저장
+# result.to_csv("./result.csv", encoding="utf-8-sig")
+# 조회수를 내림차순으로 정렬 후 csv로 저장
+result.sort_values(by=["hits"], ascending=False).to_csv("./result.csv", encoding="utf-8-sig")
