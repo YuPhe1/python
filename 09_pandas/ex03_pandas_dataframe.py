@@ -70,3 +70,21 @@ scores = pd.DataFrame(
     index=student_number
 )
 print(scores)
+print(scores.transpose()) # 행과 열 바꾸기: transpose()
+
+# index 기준 정렬
+print(scores.sort_index())
+# index 기준 내림차순 정렬
+print(scores.sort_index(ascending=False))
+# "이름" 열 기준 오름차순
+print(scores.sort_values(by="이름"))
+# print(scores.sort_values(by="이름", ascending=True))
+# "이름" 열 기준 내림차순
+print(scores.sort_values(by="이름", ascending=False))
+# "python" 열 기준 오름차순
+print(scores.sort_values(by="python"))
+
+# 첫 2줄만 조회
+print(scores.head(2))
+# 마지막 2줄만 조회
+print(scores.tail(2))
