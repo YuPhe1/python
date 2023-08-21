@@ -88,3 +88,7 @@ print(scores.sort_values(by="python"))
 print(scores.head(2))
 # 마지막 2줄만 조회
 print(scores.tail(2))
+
+# DataFrame을 csv로 내보내기
+# encoding으로 한글 깨짐 방지
+scores.to_csv("./scores.csv", encoding="utf-8-sig")
