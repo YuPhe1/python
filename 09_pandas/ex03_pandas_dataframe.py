@@ -50,3 +50,23 @@ scores_dict = {
 }
 scores = pd.DataFrame(scores_dict)
 print(scores)
+# 이름 데이터 추가
+scores["이름"] = ["김파이", "이파이", "빅파이", "최파이", "장파이"]
+print(scores)
+
+#  데이터 추가
+scores.loc[6] = [80, 80, 80, "조파이"]
+print(scores)
+
+student_number = [1, 2, 3, 4, 5, 6]
+# 학번, 이름 성적을 모두 포함한 DataFrame 선언
+scores = pd.DataFrame(
+    {
+        "이름" : ["김파이", "이파이", "빅파이", "최파이", "장파이", "조파이"],
+        "java":[96, 76, 60, 85, 80, 100], # java
+        "python":[88, 92, 100, 55, 70, 100], # python
+        "js":[10, 20, 30, 40, 50, 100] # js
+    },
+    index=student_number
+)
+print(scores)
