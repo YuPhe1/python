@@ -8,6 +8,10 @@ from collections import Counter
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
+import pymysql
+
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 
 # 무한 스크롤 함수
 def scroll_fun():
@@ -68,6 +72,20 @@ for title in titles:
             title_list.append(title.text)
             hits_list.append(hits)
             
+conn = pymysql.connect(
+    host='127.0.0.1',
+    user='user_python',
+    password='1234',
+    db='db_python',
+    charset='utf8mb4' # 한글 처리
+)
+
+cur = conn.cursor() # DB 접속
+sql = "insert into `table1` (title, hit) values(%s, %s);"
+tuple_results = list(zip(title_list, hits_list))
+cur.executemany(sql, tuple_results) # 여러개의 데이터를 한번에 집어넣을때 list, tuple 가능
+
+conn.commit()
 
 # 제목, 조회수 리스트가 담긴 디셔너리
 crawling_result = {
@@ -93,8 +111,17 @@ word_list_count = Counter(word_list)
 
 # 워드클라우스가 생성될 이미지 모습
 icon = Image.open('./12_wordcloud/image.jpg')
-# plt.imshow(icon)
 mask = np.array(icon)
+
+# 단어로 이루어진 리스트 생성
+words = []
+for word, count in word_list_count.most_common(5): # 상위 5 개
+    words.append(word)
+# words = [word for word, count in word_list_count.most_common(5)]
+# 횟수로 이루어진 리스트 생성 
+counts = [count for word, count in word_list_count.most_common(5)]
+plt.bar(words, counts)
+plt.show()
 
 # 워드 클라우드 객체 생성
 # wc = WordCloud(font_path='./12_wordcloud/NanumGothic.ttf', width=400, height=400)
