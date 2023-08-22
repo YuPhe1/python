@@ -32,7 +32,8 @@ for webtoon in webtoons:
     tags = driver.find_elements(By.CSS_SELECTOR, 'a.TagGroup__tag--xu0OH')
     for tag in tags:
         text = tag.text[1:]
-        tag_list.append(tag)
+        print(text)
+        tag_list.append(text)
     driver.close()  #링크 이동 후 탭 닫기
     driver.switch_to.window(driver.window_handles[-1])  #다시 이전 창(탭)으로 이동
     time.sleep(1)
