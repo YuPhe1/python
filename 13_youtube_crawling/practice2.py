@@ -57,17 +57,4 @@ plt.axis('off') # x, y축은 필요없으니 생략
 # 결과를 이미지로 출력할 준비
 plt.imshow(result)
 # 이미지 출력
-plt.show()# 워드 클라우드 객체 생성
-# wc = WordCloud(font_path='./12_wordcloud/NanumGothic.ttf', width=400, height=400)
-# 선택한 이미지 모양으로 표현하고 싶을 때
-wc = WordCloud(font_path='./12_wordcloud/NanumGothic.ttf', width=400, height=400, mask=mask, background_color='white')
-
-# Counter로 분석한 데이터를 워드클라우드로 만들기
-result = wc.generate_from_frequencies(tag_list_count)
-
-# matplotlib로 이미지 출력하기
-plt.axis('off') # x, y축은 필요없으니 생략
-# 결과를 이미지로 출력할 준비
-plt.imshow(result)
-# 이미지 출력
 plt.show()
