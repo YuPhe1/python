@@ -26,3 +26,5 @@ plt.axis('off') # x, y축은 필요없으니 생략
 plt.imshow(result)
 # 이미지 출력
 plt.show()
+# 워드클라우드 파일 저장
+wc.to_file('wordcloud_result.png')
